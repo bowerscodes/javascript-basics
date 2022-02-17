@@ -106,13 +106,13 @@ function startsWith(char, string) {
 function containsVowels(string) {
 
 string = string.toLowerCase()
-vowels = ("a", "e", "i", "o", "u");
-if (string.match(vowels)) {
-  return true
-}
-else {
-  return false
-}
+return /[aeiou]/.test(string)
+// string.search("a"|"e"|"i"|"o"|"u")
+//   return true
+// }
+// else {
+//   return false
+// }
 
 };
 
