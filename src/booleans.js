@@ -107,12 +107,6 @@ function containsVowels(string) {
 
 string = string.toLowerCase()
 return /[aeiou]/.test(string)
-// string.search("a"|"e"|"i"|"o"|"u")
-//   return true
-// }
-// else {
-//   return false
-// }
 
 };
 
