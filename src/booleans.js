@@ -59,31 +59,70 @@ function isGreaterThan(a, b) {
 };
 
 function isLessThanOrEqualTo(a, b) {
-  // your code here
+  if (a <= b){
+    return true
+  }
+  else {
+    return false
+  }
 };
 
 function isOdd(a) {
-  // your code here
+  if (a % 2 == 0){
+    return false
+  }
+  else {
+    return true
+  }
 };
 
 function isEven(a) {
-  // your code here
+  if (a % 2 == 0){
+    return true
+  }
+  else {
+    return false
+  }
 };
 
 function isSquare(a) {
-  // your code here
+    if (Math.sqrt(a) % 1 == 0){
+      return true
+    }
+    else {
+      return false
+    }
 };
 
 function startsWith(char, string) {
-  // your code here
+  if (string.charAt(0) == char){
+    return true
+  }
+  else {
+    return false
+  }
 };
 
 function containsVowels(string) {
-  // your code here
+
+string = string.toLowerCase()
+vowels = ("a", "e", "i", "o", "u");
+if (string.match(vowels)) {
+  return true
+}
+else {
+  return false
+}
+
 };
 
 function isLowerCase(string) {
-  // your code here
+  if (string == string.toLowerCase()){
+    return true
+  }
+  else {
+    return false
+  }
 };
 
 module.exports = {
