@@ -1,33 +1,42 @@
 const getNthElement = (index, array) => {
-  // your code here
+  if (index < array.length){
+    return array[index]
+  }
+    else { 
+    cycled = index % array.length
+    return array[cycled]
+  }
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.join()
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(',')
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element)
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  return array.concat(element)
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  // Couldn't get 'filter' to work - only way I could make this work:
+  array.splice(index, 1)
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  // // Can't do
+  // numbers.toString()
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  // // can't do
+  // return strings.toUpperCase()
 };
 
 const reverseWordsInArray = strings => {
