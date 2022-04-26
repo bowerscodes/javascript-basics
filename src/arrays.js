@@ -3,7 +3,7 @@ const getNthElement = (index, array) => {
     return array[index]
   }
     else { 
-    cycled = index % array.length
+    let cycled = index % array.length
     return array[cycled]
   }
 };
@@ -30,17 +30,17 @@ const removeNthElement = (index, array) => {
 };
 
 const numbersToStrings = numbers => {
-  // // Can't do
-  // numbers.toString()
+
+  return numbers.map(number => number.toString())
 };
 
 const uppercaseWordsInArray = strings => {
-  // // can't do
-  // return strings.toUpperCase()
+  return strings.map(string => string.toUpperCase())
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.split("").reverse().join(""))
+
 };
 
 const onlyEven = numbers => {
