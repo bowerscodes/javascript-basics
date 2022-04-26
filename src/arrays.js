@@ -46,11 +46,11 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-return array.filter((elem, i) => i !==index);
+  return array.filter((elem, i) => i !==index);
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter(str => /^[aeiou]/i.test(str))
 };
 
 const removeSpaces = string => {
