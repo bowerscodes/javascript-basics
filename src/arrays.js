@@ -25,8 +25,7 @@ const addToArray2 = (element, array) => {
 };
 
 const removeNthElement = (index, array) => {
-  // Couldn't get 'filter' to work - only way I could make this work:
-  array.splice(index, 1)
+  return array.splice(index, 1)
 };
 
 const numbersToStrings = numbers => {
@@ -40,7 +39,6 @@ const uppercaseWordsInArray = strings => {
 
 const reverseWordsInArray = strings => {
   return strings.map(string => string.split("").reverse().join(""))
-
 };
 
 const onlyEven = numbers => {
@@ -48,7 +46,7 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+return array.filter((elem, i) => i !==index);
 };
 
 const elementsStartingWithAVowel = strings => {
