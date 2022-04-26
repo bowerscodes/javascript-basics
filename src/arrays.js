@@ -46,7 +46,7 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  return array.filter((elem, i) => i !==index);
+  return array.filter((elem, i) => i !==index)
 };
 
 const elementsStartingWithAVowel = strings => {
@@ -54,7 +54,7 @@ const elementsStartingWithAVowel = strings => {
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.replace(/\s+/g,'')
 };
 
 const sumNumbers = numbers => {
