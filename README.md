@@ -97,7 +97,7 @@ const getNthElement = (index, array) => {
   }
 };
 ```
-*where `let cycled = index % array.length` cycles throuh the array if the index is greater than its length.*
+*where `let cycled = index % array.length` cycles through the array if the index is greater than its length.*
 
 It is also common to need to sum an array of integers:
 
