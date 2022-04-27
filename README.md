@@ -1,4 +1,4 @@
-# JavaScript Basics 🛫
+# JavaScript Basics 👨🏼‍💻
 ### Introduction
 This project documents my progress through the JavaScript Basics module at [ManchesterCodes](https://github.com/mcrcodes). Originally a set of blank functions, these are my solutions to the requirements set out in the accompanying Node.js Unit Tests.
 This was an excellent opportunity to learn both JavaScript Functions, and Node testing, just weeks into my coding journey. The project now serves as my first JavaScript Library - containing various functions which simplify some of the more common tasks we need to carry out upon JavaScript data types: arrays, booleans, numbers, objects and strings.
@@ -69,12 +69,10 @@ With non-boolean values, we may wish to perform other tasks - such as finding ou
 
 ```JavaScript
 function startsWith(char, string) {
-  if (string.charAt(0) == char){
+  if (string.charAt(0) == char)
     return true
-  }
-  else {
+  else
     return false
-  }
 };
 ```
 ```JavaScript
@@ -108,13 +106,13 @@ if (!nextAirportElement) {
 
 
 *Consider the following:*
-* **Courier Tracking** 🚚
+* **x**
 > 
 
-* **Train Timetables** 🚆
+* **y**
 > 
 
-* **Space Tracking** 🛰
+* **z**
 > 
 
 
