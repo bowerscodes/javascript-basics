@@ -1,88 +1,81 @@
-# JavaScript Basics
+# JavaScript Basics 🛫
+### Introduction
+This project documents my progress through the JavaScript Basics module at [ManchesterCodes](https://github.com/mcrcodes). Originally a set of blank functions, these are my solutions to the requirements set out in the accompanying Node.js Unit Tests.
+This was an excellent opportunity to learn both JavaScript Functions, and Node testing, just weeks into my coding journey. The project now serves as my first JavaScript Library - containing various functions which simplify some of the more common tasks we need to carry out upon JavaScript data types: arrays, booleans, numbers, objects and strings.
 
-The repository contains test cases and empty function definitions which need to be populated to solve the different challenges set in this weeks walkthrough. 🚨*You should not update the tests* 🚨
+## Contents
+* [Languages & Technologies](#Languages--Technologies)
+* [Scope of Functionalities](#Scope-of-Functionalities)
+* [Number Functions](#Number-Functions)
+* [String Functions](#String-Functions)
+* [Boolean Functions](#Boolean-Functions)
+* [Array Functions](#Array-Functions)
+* [Object functions](#Object-Functions)
+* [Examples of Use](#Examples-of-Use)
+* [Project Status](#Project-status)
+* [Sources & Credits](#Sources--credits)
 
-## Getting started
+## Languages & Technologies
+### Languages
+* JavaScript
 
-### Clone the repository
-First up, create a fork of this repo.
+### Technologies
+* Node.JS
+* Jest
 
-Then clone your copy of the repo:
-- `git clone git@github.com:*your-github-username*/javascript-basics.git`
 
-Then `cd` into the repository.
+## Scope of Functionalities
+### Number Functions
+This exercise was focused on practicing the act of writing functions in JavaScript. Purely mathematical, this section of the project contains functions for undertaking tasks ranging from simple `add(a, b)`, `divide(a, b)` and `power(a, b)` functions, to ones which required slightly more research to solve, such as `quotient(a, b)`, `roundUp(a)`, and `absolute(a)`.
 
-You will see a few files and directory in here. Most interestingly we have:
-- `src` directory - this is where our code lives
-- `test` directory - this is where our test code lives
-- a `package.json` file, which contains some configuration for our project
+### String Functions
 
-### Install the project dependencies
-The `npm install` command (or `npm i` for short)  will tell npm (node package manager) to download the `dependencies` and `devDependencies` for this project, which are defined in the `package.json` file.
 
-**Take a look in `package.json` - what dependencies does this project have?**
+### Boolean functions
 
-Now run the `npm install` command. Once it has completed, you should see a new `node_modules` directory in the repository. This is where our dependencies live. It's important that we don't add this directory to git, since it can contain 100000's of files that we don't need to maintain, and can just be downloaded.
 
-In the `package.json` file you can see that there are only devDependencies for this project.
+### Array functions
 
-### Run the test code
-Jest is a JavaScript testing framework - it allows us to write automated tests that 
-1. describe how our code should behave
-2. assert that is _does_ behave in the desired way
 
-Once you have installed the dependencies, run `npm test` or `npm t` for short. This command will run the `test` script defined in our `package.json`, which simply runs Jest. When we run Jest, it will execute the test code written in the `test` directory. For now, you should see a message saying that all of the tests were skipped.
+### Object Functions
 
-Take a look at the files in the `test` directory - you will see a few files in here, all ending with `.test.js`. These map to the files in the `src` directory, and contain the tests for these files.
 
-For example `test/strings.test.js` contains the tests for the functions defined in `src/strings.js`.
 
-Take a look at the `test/strings.test.js`. At the top, we have a `require` statement. This imports the functions from our `src/strings.js` file into the test file, so that the tests can use the functions we have written in that file.
 
-Beneath the `require`s are the actual tests.
 
-These are broken into `describe` blocks, which group the tests for each function together. Each `describe` block contains some `it` blocks, which define an individual test, along with . (At the moment, these should actually be `xit` blocks... more on that imminently).
+<!-- We can also make things happen conditionally - for example, when we reach the end of our `flightplan`:
+```JavaScript
+if (!nextAirportElement) {
+        this.renderMessage('End of the Line!');
+    } else {
+        this.renderMessage(`Now departing ${aeroplane.currentAirport.name}`);
+``` -->
 
-The individual `it` blocks make some assertions about what should happen when we call the function we are testing.
 
-For example:
+## Examples of Use
 
-```js
-describe('sayHello', () => {
-  it('returns "Hello world!" when passed "world"', () => {
-    expect(sayHello('world')).toEqual('Hello, world!');
-  });
-});
-```
 
-- `describe('sayHello', () => { ... });` tells us that all of the code inside the block is concerned with testing the `sayHello` function.
-- `it('returns "Hello world!" when passed "world"', () => { ... });` tells us what the return value of the function should be when passed a certain argument.
-- `expect(sayHello('world')).toEqual('Hello, world!');` this line invokes the function with the string `'world` as an argument, and make an assertion about the return value of this action - it should equal `'Hello, world!'`.
+*Consider the following:*
+* **Courier Tracking** 🚚
+> 
 
-The reason all of the tests were skipped is because we have used `xit` instead of `it`. Change the `xit` on the first test to an `it` and then run `npm test` in your terminal again. You should now see the test run, and fail - with the following error message:
+* **Train Timetables** 🚆
+> 
 
-```
-Expected value to equal:
-      "Hello, world!"
-    Received:
-      undefined
+* **Space Tracking** 🛰
+> 
 
-    Difference:
-      Comparing two different types of values. Expected string but received undefined.
-```
 
-This tells us that calling the `helloWorld` function with the string `'world'` returned `undefined`, but the test was expecting it to return the string `'Hello, world!'`
+## Project Status
+This project is complete! 🥳
 
-Now take a look at `src/strings.js` and in particular at the `sayHello` function: 
+## Sources & Credits
+<!-- This project is an adapted remake of a ship tracking project made whilst studying with Manchester Codes. -->
 
-```js
-const sayHello = (string) => {
-  // your code here
-};
-```
 
-Can you see why we got the test result that we did?
 
-### Update the function so that the test pass
 
-You challenge is to write some code in the `sayHello` function in `src/strings.js` that will make the test pass. 🚨*You should not update the tests* 🚨
+
+
+
+
