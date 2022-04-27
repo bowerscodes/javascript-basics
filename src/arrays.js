@@ -1,7 +1,6 @@
 const getNthElement = (index, array) => {
-  if (index < array.length){
+  if (index < array.length)
     return array[index]
-  }
     else { 
     let cycled = index % array.length
     return array[cycled]

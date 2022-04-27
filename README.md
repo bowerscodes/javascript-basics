@@ -85,21 +85,68 @@ function isSquare(a) {
 ```
 
 ### Array functions
+Arrays are more complex data types than integers, strings or booleans because the data is stored in a sequence, with each item's position referred to as its index, beginning at 0. We may wish to retrieve an item from within an array, using `getNthElement(index, array)`:
 
+```JavaScript
+const getNthElement = (index, array) => {
+  if (index < array.length)
+    return array[index]
+    else { 
+    let cycled = index % array.length
+    return array[cycled]
+  }
+};
+```
+*where `let cycled = index % array.length` cycles throuh the array if the index is greater than its length.*
+
+It is also common to need to sum an array of integers:
+
+```JavaScript
+const sumNumbers = numbers => {
+  return numbers.reduce((a, b) => a + b, 0)
+};
+```
+
+Finally, we may also want to do something more complex - such as returning an array with an element removed, without manipulating the original array:
+
+```JavaScript
+const removeNthElement2 = (index, array) => {
+  return array.filter((elem, i) => i !==index)
+};
+```
 
 ### Object Functions
+Objects are collections of data, stored in `key : value` pairs, which enables us to give an item multiple values, as opposed to solely its inherent value. Take a set of applicants for bus passes - we would store them as objects, with attributes such an name, age, address, etc. We may need a function which quickly checks eligibility:
 
-
-
-
-
-<!-- We can also make things happen conditionally - for example, when we reach the end of our `flightplan`:
 ```JavaScript
-if (!nextAirportElement) {
-        this.renderMessage('End of the Line!');
-    } else {
-        this.renderMessage(`Now departing ${aeroplane.currentAirport.name}`);
-``` -->
+const isOver65 = person => {
+  if (person.age > 65) {return true;} else {return false;}
+};
+```
+
+Or, consider a car sales website, which needs a function to return all objects where `Manufacturer : Honda`:
+
+```JavaScript
+const findHondas = cars => {
+  return cars.filter(elem => elem.manufacturer === 'Honda')
+};
+```
+
+Finally, we may wish to create an obect from inputs `name` and `age`, which returns a message to the user:
+
+```JavaScript
+const createTalkingPerson = (name, age) => {
+  const person = {name: name, age: age, introduce: function (string) {
+    return `Hi ${string}, my name is ${name} and I am ${age}!`}};
+  return person;
+};
+```
+where the introduce function is called as a Method on the Object, with another name passed in as a string:
+
+```JavaScript
+bill.introduce('Fred')
+```
+`'Hi Fred, my name is Bill and I am 40!'`
 
 
 ## Examples of Use
