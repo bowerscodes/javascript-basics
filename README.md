@@ -28,11 +28,63 @@ This was an excellent opportunity to learn both JavaScript Functions, and Node t
 ### Number Functions
 This exercise was focused on practicing the act of writing functions in JavaScript. Purely mathematical, this section of the project contains functions for undertaking tasks ranging from simple `add(a, b)`, `divide(a, b)` and `power(a, b)` functions, to ones which required slightly more research to solve, such as `quotient(a, b)`, `roundUp(a)`, and `absolute(a)`.
 
-### String Functions
+```JavaScript
+function quotient (a, b) {
+  return(Math.trunc(a/b))
+}
+```
 
+### String Functions
+Strings are different to integers, in that they hold no numerical value - and so the options we have in terms of manipulating their values, are slightly more limited. However, strings are a common web data type - so there are some common functions we may wish to carry out upon them: from a simple `sayHello(name)` function for a web form, to other routine tasks such as `countCharacters(string)` and `firstCharacters(string, n)`.
+
+```JavaScript
+function sayHello (string) {
+  return "Hello, " + string + '!';
+};
+```
 
 ### Boolean functions
+This section of the library contains functions which both operate upon boolean values (i.e. `true`, `false`), as well as producing boolean outputs from integer and string inputs. This part of the course at ManchesterCodes also introduced us to the concept of *truthiness* and *equivalence* - which naturally led us to exploring `if` statements.
 
+For example, we may wish to return a true / false response based on the value of multiple inputs using AND / OR logic:
+
+```JavaScript
+function both(a, b) {
+  if (a == true && b == true)
+    return true
+  else 
+    return false
+};
+```
+```JavaScript
+function either(a, b) {
+  if (a == true || b == true)
+    return true
+  else
+    return false
+};
+```
+
+With non-boolean values, we may wish to perform other tasks - such as finding out whether a phone number begins with a 0 using `startsWith(char, string)`, or finding out if a number is a square number, with `isSquare(a)`:
+
+```JavaScript
+function startsWith(char, string) {
+  if (string.charAt(0) == char){
+    return true
+  }
+  else {
+    return false
+  }
+};
+```
+```JavaScript
+function isSquare(a) {
+    if (Math.sqrt(a) % 1 == 0)
+      return true
+    else 
+      return false
+};
+```
 
 ### Array functions
 
