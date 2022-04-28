@@ -11,6 +11,7 @@ This was an excellent opportunity to learn both JavaScript Functions, and Node t
 * [Boolean Functions](#Boolean-Functions)
 * [Array Functions](#Array-Functions)
 * [Object functions](#Object-Functions)
+* [Unit Testing](#Unit-Testing)
 * [Examples of Use](#Examples-of-Use)
 * [Project Status](#Project-status)
 * [Sources & Credits](#Sources--credits)
@@ -147,6 +148,85 @@ where the introduce function is called as a Method on the Object, with another n
 bill.introduce('Fred')
 ```
 `'Hi Fred, my name is Bill and I am 40!'`
+
+
+## Unit Testing
+Accompanying all of the Function lists, is an accompanying node `.test` file for each of the data types. This served three purposes during the exercise - to test our functions for correctness, to provide us with a set of expectations to work back from, but also to get us used to writing our own unit tests, to further validate the results of our functions. This was my first introduction to Unit Testing, and I found this Test-Driven Development approach to programming to be highly rewarding. As a learner it allowed me to approach the task from the perspectives of both refinement, and diagnosis: Does the code itself pass? If so, is that enough? Could the tests be developed further to minimise bugs? If the tests didn't pass, what are the requirements defined in the test suite? Could it be that numbers are being passed in as strings, and not integer values, for example?
+
+```JavaScript
+describe('isEqual', () => {
+  it('returns whether the two values are equal', () => {
+    expect(isEqual(10, '10')).toBe(false);
+  });
+});
+```
+
+For slightly more specific tasks, the test-driven approach to this project was crucial in my understanding of how some of JavaScript's more complex array Methods, such as `.splice()` and `.filter()` actually process the data behind the scenes:
+
+***removeNthElement()***
+*Test Requirements:*
+```JavaScript
+describe('removeNthElement', () => {
+  it('removes the element at position n', () => {
+    const array = ['ant', 'bison', 'cockerel', 'duck', 'elephant'];
+    removeNthElement(2, array);
+    expect(array).toEqual(['ant', 'bison', 'duck', 'elephant']);
+    
+    const arrayTwo = ['thing 1', 'thing 2', 'thing 3', 'thing 4', 'thing 5'];
+    removeNthElement(0, arrayTwo);
+    expect(arrayTwo).toEqual(['thing 2', 'thing 3', 'thing 4', 'thing 5']);
+  });
+});
+```
+*Solution:*
+```JavaScript
+const removeNthElement = (index, array) => {
+  return array.splice(index, 1)
+};
+```
+
+***removeNthElement2(index, array)***
+*Test Requirements:*
+```JavaScript
+describe('removeNthElement2', () => {
+  it('returns an array with the nth element removed, and does not mutate the original', () => {
+    const array = ['bike', 'car', 'train', 'bus'];
+    expect(removeNthElement2(2, array)).toEqual(['bike', 'car', 'bus']);
+    expect(array).toEqual(['bike', 'car', 'train', 'bus']);
+    const arrayTwo = ['cat', 'mouse', 'banana'];
+    expect(removeNthElement2(0, arrayTwo)).toEqual(['mouse', 'banana']);
+    expect(arrayTwo).toEqual(['cat', 'mouse', 'banana']);
+  });
+});
+```
+*Solution:*
+```JavaScript
+const removeNthElement2 = (index, array) => {
+  return array.filter((elem, i) => i !==index)
+};
+```
+
+The main benefit of the test-driven approach, for me, was having the ability to define precise success criteria, which require multiple process steps, without requiring any knowledge of how to solve the problem. This mentally clears up and organises the coding process for me - the problem can be solved quicker in most cases, because the act of writing the test code reinforces and ultimately decides the logic:
+
+*Test Requirements:*
+```JavaScript
+describe('sortByLastLetter', () => {
+  it('sorts the string by the last character', () => {
+    expect(
+      sortByLastLetter(['Lannister', 'Stark', 'Greyjoy', 'Targaryen'])
+    ).toEqual(['Stark', 'Targaryen', 'Lannister', 'Greyjoy']);
+    expect(
+      sortByLastLetter(['Mo', 'Romy', 'Miguel', 'Martyna'])
+    ).toEqual(['Martyna', 'Miguel', 'Mo', 'Romy']);
+  });
+});
+```
+*Solution:*
+```JavaScript
+const sortByLastLetter = strings => {
+  return strings.sort((a, b) => a. charCodeAt(a.length -1) - b.charCodeAt(b.length -1))
+};
+```
 
 
 ## Examples of Use
