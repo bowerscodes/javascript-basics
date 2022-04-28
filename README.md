@@ -151,7 +151,8 @@ bill.introduce('Fred')
 
 
 ## Unit Testing
-Accompanying all of the Function lists, is an accompanying node `.test` file for each of the data types. This served three purposes during the exercise - to test our functions for correctness, to provide us with a set of expectations to work back from, but also to get us used to writing our own unit tests, to further validate the results of our functions. This was my first introduction to Unit Testing, and I found this Test-Driven Development approach to programming to be highly rewarding. As a learner it allowed me to approach the task from the perspectives of both refinement, and diagnosis: Does the code itself pass? If so, is that enough? Could the tests be developed further to minimise bugs? If the tests didn't pass, what are the requirements defined in the test suite? Could it be that numbers are being passed in as strings, and not integer values, for example?
+Accompanying all of the Function lists, is a node `.test` file for each of the data types. This served three purposes during the exercise - to test our functions for correctness, to provide us with a set of expectations to work back from, but also to get us used to writing our own unit tests, to further validate the results of our functions. 
+This was my first introduction to Unit Testing, and I found this Test-Driven Development approach to programming to be highly rewarding. As a learner it allowed me to approach the task from the perspectives of both refinement, and diagnosis: Does the code itself pass? If so, is that enough? Could the tests be developed further to minimise bugs? If the tests didn't pass, what are the requirements defined in the test suite? Could it be that numbers are being passed in as strings, and not integer values, for example?
 
 ```JavaScript
 describe('isEqual', () => {
@@ -208,6 +209,7 @@ const removeNthElement2 = (index, array) => {
 
 The main benefit of the test-driven approach, for me, was having the ability to define precise success criteria, which require multiple process steps, without requiring any knowledge of how to solve the problem. This mentally clears up and organises the coding process for me - the problem can be solved quicker in most cases, because the act of writing the test code reinforces and ultimately decides the logic:
 
+***.sortByLastLetter(strings)***
 *Test Requirements:*
 ```JavaScript
 describe('sortByLastLetter', () => {
@@ -230,24 +232,22 @@ const sortByLastLetter = strings => {
 
 
 ## Examples of Use
-
+Whilst this project's primary function was to introduce me to the various JavaScript functions & methods for each data type by writing & passing unit tests, now that it is complete it can serve as a basic JavaScript library.
 
 *Consider the following:*
-* **x**
-> 
+* **Internal Framework**
+> Different businesses require different operations to be carried out upon the data they process. Throughout my career, I will no doubt be spending lots of time developing internal frameworks for employers, using a test-driven approach to ensure that the functions in those frameworks are manipulating the data as required.
 
-* **y**
-> 
+* **APIs**
+> APIs are the interface by which different languages and programs communicate. In order to do this successfully, requests must be processed into usable data. They do this by calling a specific set of functions and methods on the requests received, which are defined in an accompanying library. This code could easily be used as a starting point for future API libraries.
 
-* **z**
-> 
 
 
 ## Project Status
 This project is complete! 🥳
 
 ## Sources & Credits
-<!-- This project is an adapted remake of a ship tracking project made whilst studying with Manchester Codes. -->
+This project is part of my learning log of my progress at [ManchesterCodes](https://github.com/mcrcodes).
 
 
 
